@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/bat.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <script src="js/zepto.js"></script>
+    <title>轮播</title>
+</head>
+<body>
+<section id="cntHtml">
+    <div class="slider">
+        <nav class="slider-nav">
+            <a></a>
+            <a></a>
+            <a></a>
+        </nav>
+        <section id="sliders" class="slider-content">
+            <div class="slider-inner"><img src="http://fpoimg.com/414x232?text=img1" alt=""></div>
+            <div class="slider-inner"><img src="http://fpoimg.com/414x232?text=img2" alt=""></div>
+            <div class="slider-inner"><img src="http://fpoimg.com/414x232?text=img3" alt=""></div>
+        </section>
+    </div>
+</section>
+
+<script src="js/bat.js"></script>
+<script src="js/demo.js"></script>
+
+<script>
+    var tab1=new $.Scroll('#sliders',{autoPlay:true});
+</script>
+
+
+</body>
+</html>

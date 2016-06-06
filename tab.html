@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/bat.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <script src="js/zepto.js"></script>
+    <title>tab标签</title>
+</head>
+<body>
+<section id="cntHtml">
+    <div class="tab">
+        <nav class="tab-nav border-b">
+            <a>全部</a>
+            <a>教育</a>
+            <a>医疗</a>
+        </nav>
+        <section id="tab1" class="tab-content" style="height:200px">
+            <div class="tab-inner">自动切换内容1</div>
+            <div class="tab-inner">自动切换内容2</div>
+            <div class="tab-inner">自动切换内容3</div>
+        </section>
+    </div>
+    <div class="tab">
+    <nav class="tab-nav border-b">
+        <a>全部</a>
+        <a>教育</a>
+        <a>医疗</a>
+    </nav>
+    <section id="tab2" class="tab-content" style="height:200px">
+        <div class="tab-inner">内容1</div>
+        <div class="tab-inner">内容2</div>
+        <div class="tab-inner">内容3</div>
+    </section>
+    </div>
+</section>
+
+<script src="js/bat.js"></script>
+<script src="js/demo.js"></script>
+
+<script>
+        var tab1=new $.Scroll('#tab1',{autoPlay:true});
+        var tab2=new $.Scroll('#tab2');
+</script>
+
+
+</body>
+</html>

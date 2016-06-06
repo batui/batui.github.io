@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/bat.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <script src="js/zepto.js"></script>
+    <title>弹窗</title>
+</head>
+<body>
+<section id="cntHtml">
+    <div class="demo-container">
+        <div class="demo-item">
+            <h3 class="dem-dia-title">alert提示</h3>
+
+            <div class="dia-wrap">
+                <a class="btn" href="javascript:;" id="demoAlert">运行</a>
+            </div>
+            <h3 class="dem-dia-title">confirm确认框</h3>
+
+            <div class="dia-wrap">
+                <a class="btn" href="javascript:;" id="demoConfirm">运行</a>
+            </div>
+            <h3 class="dem-dia-title">提示</h3>
+
+            <div class="dia-wrap">
+                <a class="btn" href="javascript:;" id="demoTips">运行</a>
+            </div>
+            <h3 class="dem-dia-title">成功提示</h3>
+
+            <div class="dia-wrap">
+                <a class="btn" href="javascript:;" id="demoSuccess">运行</a>
+            </div>
+            <h3 class="dem-dia-title">失败提示</h3>
+
+            <div class="dia-wrap">
+                <a class="btn" href="javascript:;" id="demoError">运行</a>
+            </div>
+            <h3 class="dem-dia-title">toast提示</h3>
+
+            <div class="dia-wrap">
+                <a class="btn" href="javascript:;" id="demoToast">运行</a>
+            </div>
+            <h3 class="dem-dia-title">loading加载</h3>
+
+            <div class="dia-wrap">
+                <a class="btn" href="javascript:;" id="demoLoading">运行</a>
+            </div>
+            <h3 class="dem-dia-title">prompt</h3>
+
+            <div class="dia-wrap">
+                <a class="btn" href="javascript:;" id="demoPrompt">运行</a>
+            </div>
+            <h3 class="dem-dia-title">新开页面</h3>
+
+            <div class="dia-wrap">
+                <a class="btn" href="javascript:;" id="demoLoads">运行</a>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="js/bat.js"></script>
+<script src="js/demo.js"></script>
+<script>
+    $(function () {
+
+        $('#demoAlert').on('click', function () {
+            $.dialog({
+                type: 'alert',
+                content: 'alert提示',
+                ok: function () {
+                    $.dialog({type: 'alert', title: '温馨提示', content: '我是带标题的alert'})
+                }
+            });
+        });
+
+        $('#demoConfirm').on('click', function () {
+            $.dialog({
+                type: 'confirm',
+                content: '确定删除吗？',
+                ok: function () {
+                    $.dialog({type: "success", content: '删除成功'});
+                },
+                cancel: function () {
+                    $.dialog({type: "tip", content: '已取消'});
+                }
+            })
+            ;
+        });
+
+        $('#demoTips').on('click', function () {
+            $.dialog({
+                type: "tip",
+                content: '请输入联系方式'
+            });
+        });
+        $('#demoSuccess').on('click', function () {
+            $.dialog({
+                type: 'success',
+                content: '提交成功'
+            });
+        });
+        $('#demoError').on('click', function () {
+            $.dialog({
+                type: "error",
+                content: '提交失败'
+            });
+        });
+
+        $('#demoToast').on('click', function () {
+            $.dialog({type: 'toast', content: 'toast提示：请输入联系方式！'});
+        });
+
+        $('#demoLoading').on('click', function () {
+            var loading = $.dialog({type: 'load', content: '正在加载中...'});
+            setTimeout(function () {
+                loading.close();
+            }, 3000);
+        });
+
+        $('#demoPrompt').on('click', function () {
+            $.dialog({
+                type: 'confirm',
+                title: '请输入：',
+                content: '<input class="ipt-prompt" id="telText" type="text">',
+                ok: function () {
+                    if ($('#telText').val() == '') {
+                        $.dialog({type: 'tip', content: '请输入信息'});
+                        return false;
+                    } else {
+                        $.dialog({
+                            type: 'tip',
+                            content: '你输入的是' + $('#telText').val()
+                        });
+                    }
+
+                }
+            });
+        });
+        $('#demoLoads').on('click', function () {
+            $.dialog({
+                type: 'url',
+                content: 'dialog-test.html',
+                callback: function (data, status, xhr) {
+                    $('#demoAlerts').die('click').live('click', function () {
+                        alert(data)
+                    })
+                }
+            });
+        });
+
+    })
+</script>
+</body>
+</html>

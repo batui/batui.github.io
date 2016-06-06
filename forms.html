@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/bat.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <script src="js/zepto.js"></script>
+    <title>表单</title>
+</head>
+<body>
+<section id="cntHtml">
+    <h3 class="list-title">切换开关checkbox：</h3>
+    <ul class="list">
+        <li>
+            <div class="item-inner list-flex">
+                <div class="list-mt">推送</div>
+                <label class="list-rt">
+                    <input class="switch" type="checkbox" checked>
+                </label>
+            </div>
+        </li>
+    </ul>
+    <h3 class="list-title">多选checkbox：</h3>
+    <ul class="list">
+        <li>
+            <div class="item-inner">
+                <label><input class="checkbox" type="checkbox" checked>互联网</label>
+            </div>
+        </li>
+        <li>
+            <div class="item-inner">
+                <label><input class="checkbox" type="checkbox">教育</label>
+            </div>
+        </li>
+    </ul>
+    <h3 class="list-title">迷你checkbox：</h3>
+    <ul class="list">
+        <li>
+            <div class="item-inner">
+                <label><input class="checkbox checkbox-s" type="checkbox" checked>同意</label>
+            </div>
+        </li>
+    </ul>
+    <h3 class="list-title">单选radio：</h3>
+    <ul class="list">
+        <li>
+            <div class="item-inner list-label">
+                <label>
+                    <input class="radio" name="one" type="radio" checked>
+                    Native App
+                </label>
+                <label>
+                    <input class="radio" name="one" type="radio">
+                    Web App
+                </label>
+            </div>
+        </li>
+    </ul>
+    <h3 class="list-title">选择下拉select：</h3>
+    <ul class="list">
+        <li>
+            <div class="item-inner">
+                <div class="select">
+                    <select>
+                        <option>多列式</option>
+                        <option>sass</option>
+                        <option>less</option>
+                        <option>compass sass</option>
+                    </select>
+                </div>
+                <div class="select">
+                    <select>
+                        <option>多列式</option>
+                        <option>sass</option>
+                        <option>less</option>
+                        <option>compass sass</option>
+                    </select>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h3 class="list-title">块级单行式：</h3>
+    <ul class="list">
+        <li>
+            <div class="item-inner">
+                <div class="select-block">
+                    <select>
+                        <option>选择块级单行</option>
+                        <option>less</option>
+                        <option>compass sass</option>
+                    </select>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <h3 class="list-title">输入框：</h3>
+    <ul class="list">
+        <li>
+            <div class="item-inner list-flex">
+                <label class="list-lt">账号</label>
+
+                <div class="list-mt">
+                    <input class="input" type="text" placeholder="请输入账号">
+                </div>
+                <div class="ico-close">
+                    <a>清除</a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="item-inner list-flex">
+                <label class="list-lt">密码</label>
+
+                <div class="list-mt">
+                    <input class="input" type="password" placeholder="请输入密码">
+                </div>
+                <div class="ico-close">
+                    <a>清除</a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="item-inner list-flex flex-start">
+                <label class="list-lt">内容</label>
+
+                <div class="list-mt">
+                    <textarea class="textarea" placeholder="请输入内容"></textarea>
+                </div>
+                <div class="ico-close">
+                    <a>清除</a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="item-inner item-padding-no list-flex">
+                <label class="list-lt">验证码</label>
+
+                <div class="list-mt">
+                    <input class="input" type="text" placeholder="请输入验证码">
+                </div>
+                <div class="ico-close">
+                    <a>清除</a>
+                </div>
+                <div class="border-l list-rt vcode">
+                    <img src="http://fpoimg.com/70x44?text=RC8B" alt="">
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="item-inner list-flex">
+                <div class="list-mt">
+                    <input class="input" type="text" placeholder="手机号">
+                </div>
+                <div class="ico-close">
+                    <a>清除</a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="item-inner item-padding-no list-flex">
+                <div class="list-mt">
+                    <input class="input" type="text" placeholder="短信验证码">
+                </div>
+                <div class="ico-close">
+                    <a>清除</a>
+                </div>
+                <div class="border-l  list-rt btn-active">
+                    获取验证码
+                </div>
+            </div>
+        </li>
+
+    </ul>
+</section>
+
+<script src="js/bat.js"></script>
+<script src="js/demo.js"></script>
+</body>
+</html>

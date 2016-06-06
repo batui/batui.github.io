@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/bat.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <script src="js/zepto.js"></script>
+    <title>菜单操作表</title>
+</head>
+<body>
+<section id="cntHtml">
+    <h3 class="item-title">菜单</h3>
+    <ul class="list list-active">
+        <li class="item-link">
+            <div class="item-inner list-flex">
+                <h4>消息设置</h4>
+                <div class="txt-info">接收</div>
+            </div>
+        </li>
+    </ul>
+    <div class="actionsheet">
+        <div class="actionsheet-cnt">
+            <h4>请选择</h4>
+            <button>接收</button>
+            <button>不接收</button>
+            <button class="actionsheet-del">屏蔽</button>
+            <button class="cancel">取消</button>
+        </div>
+    </div>
+</section>
+<script src="js/bat.js"></script>
+<script src="js/demo.js"></script>
+<script type="text/javascript">
+    $('.item-link')[tap](function () {
+        $('.actionsheet').addClass('show');
+    });
+
+    //取消
+    //用弹出层用touchend代替tap防止穿透
+    if (isUA) {
+        tap = 'touchend';
+    }
+    $('.actionsheet button.cancel').on(tap, function (e) {
+        $('.actionsheet').removeClass('show');
+        e.preventDefault();
+    })
+</script>
+</body>
+</html>
